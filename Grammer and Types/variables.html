@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+    //Variable hoisting using var
+    console.log(x === undefined); //true
+    var x= 3;
+    
+
+    var y;
+    console.log(y === undefined);//true
+    y =5; 
+
+     z = 5;
+     console.log(z === undefined); //false
+     console.log(z);
+     var z;
+
+
+  //Variable hoisting using let
+   console.log(a === undefined); //
+   let a = 4;
+
+   //variable hoisting using const
+
+   // THIS WILL CAUSE AN ERROR
+function f() {};
+const f = 5;
+
+// THIS WILL CAUSE AN ERROR TOO
+function f() {
+  const g = 5;
+  var g;
+
+  //statements
+}
+
+
+</script>
+    
+</body>
+</html>

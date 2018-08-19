@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a;
+        console.log(a); //undefined
+
+        //The undefined value converts to NaN when used in numeric context.
+        console.log(a + 2 ); //NAN
+
+
+        console.log(b);  //undefined
+        var b;         
+
+        console.log(c); //Evaluating variables
+
+                
+        let x;
+        console.log('The value of x is ' + x); // The value of x is undefined
+
+        console.log('The value of y is ' + y); // Uncaught ReferenceError: y is not defined
+        let y;
+
+//When you evaluate a null variable, the null value behaves as 0 in numeric contexts and as false in boolean contexts.
+
+
+        var n = null;
+        console.log(n * 32); // Will log 0 to the console
+
+
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script> 
+                var saswat={
+                    name:'Saswat',
+                    yob:1993,
+                    calculateAge:function() {
+                        console.log(this);    // saswat object
+                        console.log(2018- this.yob);
+                    }
+                }
+                saswat.calculateAge(); // 25
+
+                var ram={
+                    name:'Ram',
+                    yob: 1995
+                };
+                ram.calculateAge = saswat.calculateAge;
+                ram.calculateAge(); //23
+            </script>
+    
+</body>
+</html>

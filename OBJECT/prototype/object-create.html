@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var personProto = {
+            age:function(){
+            console.log( 2018 - this.yob);    
+            }
+
+        };
+
+        var saswat = Object.create(personProto);
+        saswat.name ="saswat";
+        saswat.yob= 1994;
+        saswat.age();
+
+
+        var saswat1 = Object.create(personProto,{
+            name:{ value:"Saswat1" },
+            yob:{ value: 1996 }
+
+        });
+    </script>
+    
+</body>
+</html>

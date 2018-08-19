@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form name="selectForm">
+        <p>
+        <label for="item">Choose some items, then click the button</label>
+        <select id="items" name="items" multiple="multiple">
+                <option selected="selected">ice cream</option>
+                <option>pizza</option>
+                <option>coke</option>
+                <option>beer</option>
+                <option>fries</option>
+                <option>burger</option>
+        </select>
+        </p>
+        <p><input id="btn" type="button" value="How many items are selected?" /></p>
+    </form>
+    <h1 id="showItems"></h1>
+    <script>
+    function howMany(selectObject){
+        var numSelected=0;
+        for(var i=0;i<selectObject.options.length;i++){
+            if(selectObject.options[i].selected){
+                numSelected ++;
+            }
+        }
+        return numSelected;
+    }
+
+    var btn=document.getElementById('btn');
+    btn.addEventListener('click',function(){
+        alert('Number of item/s selected: ' + howMany(document.selectForm.items));
+        document.getElementById('showItems').innerHTML='u have selected: ' + howMany(document.selectForm.items) + "items";
+    });
+    </script>
+</body>
+</html>

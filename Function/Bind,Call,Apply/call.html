@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+var person1 = {
+    firstName:"John",
+    lastName: "Doe",
+}
+var person2 = {
+    firstName:"Mary",
+    lastName: "Doe",
+}
+console.log(person.fullName.call(person2));  //Marry Doe
+
+
+
+var obj = {
+    name:'Saswat'
+};
+
+var greeting=function(a,b,c){
+    return "welcome " + this.name + " " + "to"+ " " + a+ " " + b +  " in " +c;
+
+}
+
+console.log(greeting.call(obj,"Marathalli","Banglore","KA")); //welcome Saswat to Marathalli Banglore in KA
+
+
+    </script>
+</body>
+</html>
