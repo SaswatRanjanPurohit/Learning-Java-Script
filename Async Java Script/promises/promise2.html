@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let cleanRoom = function(){
+            return new Promise(function(resolve,reject){
+                resolve('Cleaned the room'+" >");
+            });
+        };
+       
+        let removeGarbage = function(message){
+            return new Promise(function(resolve,reject){
+                resolve(message + " " +'Remove Garbage'+" >");
+            });
+        };
+
+        let winIcecream = function(message){
+            return new Promise(function(resolve,reject){
+                resolve(message + " " +'Won Icecream');
+            });
+        };
+
+        cleanRoom().then(function(result){
+            return removeGarbage(result);
+        }).then(function(result){
+            return winIcecream(result);
+        }).then(function(result){
+            console.log('Finished'+ " " +result); //Finished Cleaned the room > Remove Garbage > Won Icecream
+        })
+
+//When all are finished
+Promise.all([cleanRoom(),removeGarbage(),winIcecream()]).then(function(){
+    console.log("all finished"); //all finished
+})
+
+//when one of them is finished
+Promise.race([cleanRoom(),removeGarbage()]).then(function(){
+console.log("one of them is finised"); //one of them is finised
+})
+
+Promise.race([cleanRoom()]).then(function(){
+console.log("one of them is finised"); //one of them is finised
+})
+
+    </script>
+</body>
+</html>

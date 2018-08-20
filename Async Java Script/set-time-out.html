@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const second =()=>{
+        setTimeout(()=>{
+            console.log("This a async js");
+        },3000);
+      
+    }
+    const first = ()=>{
+        console.log("hiiiii");
+        second();
+        console.log("saswat");
+    }
+
+    first();
+    </script>
+</body>
+</html>

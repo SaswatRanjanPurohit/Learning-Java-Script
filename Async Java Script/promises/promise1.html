@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// Reslove
+
+        let promiseToCleanTheRoom = new Promise(function(resolve,reject){
+
+            let isClean= true;
+            if(isClean){
+                resolve('Clean');
+            }
+            else{
+            reject();
+            }
+        });
+        promiseToCleanTheRoom.then(function(fromResolve){
+        console.log('the room is' +' ' + fromResolve);  //the room is Clean
+        });
+
+//Reject
+let promiseToCleanTheRoom = new Promise(function(resolve,reject){
+
+let isClean= false;
+if(isClean){
+    resolve('Clean');
+}
+else{
+reject('Not Clean');
+}
+});
+promiseToCleanTheRoom.then(function(fromResolve){
+console.log('the room is' +' ' + fromResolve);  //the room is Clean
+}).catch(function(fromReject){
+    console.log('the room is' +' ' + fromReject);  //the room is Not Clean
+});
+
+
+    </script>
+</body>
+</html>
